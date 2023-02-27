@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>前端面试题挑战</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-27T12:42:25.059Z</updated>
+  <updated>2023-02-27T13:18:08.478Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>韩昊洋</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Day1前端面试题</title>
-    <link href="http://example.com/2023/02/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
-    <id>http://example.com/2023/02/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
-    <published>2023-02-17T15:17:22.000Z</published>
-    <updated>2023-02-27T12:42:25.059Z</updated>
+    <title>Day2前端面试题</title>
+    <link href="http://example.com/2023/02/27/Day2%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/02/27/Day2%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-02-27T13:12:14.000Z</published>
+    <updated>2023-02-27T13:18:08.478Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="有哪些常用的-HTML-标签？"><a href="#有哪些常用的-HTML-标签？" class="headerlink" title="有哪些常用的 HTML 标签？"></a>有哪些常用的 HTML 标签？</h3><p>HTML（Hyper Text Markup Language）是一种用于创建 Web 页面的标准标记语言。<br>常用的 HTML 标签有：<br>标题标签（h1~h6）：定义页面中的标题，h1 表示最高级别的标题，h6 表示最低级别的标题。<br>段落标签（p）：定义一个段落，通常用于组织页面内容。<br>链接标签（a）：定义一个超链接，指向另一个文档或 Web 页面。<br>图像标签（img）：插入一个图像，可以通过指定图像的 URL 或相对路径来显示。<br>列表标签（ul、ol、li）：用于创建无序列表和有序列表。<br>表格标签（table、tr、th、td）：用于创建表格。<br>表单标签（form、input、textarea、select、button）：用于创建用户输入表单。<br>样式标签（style）：定义 CSS 样式。<br>脚本标签（script）：用于嵌入 JavaScript 脚本代码。<br>分割线标签（hr）：用于在页面中插入一条水平分割线。<br>以上是一些常用的 HTML 标签，通过组合使用这些标签，可以创建出各种复杂的 Web 页面。</p><h3 id="CSS-选择器有哪些？优先级分别是什么？"><a href="#CSS-选择器有哪些？优先级分别是什么？" class="headerlink" title="CSS 选择器有哪些？优先级分别是什么？"></a>CSS 选择器有哪些？优先级分别是什么？</h3><p>CSS 选择器可以根据不同的属性、标签名、类名、ID 等条件来选择页面中的元素，常用的选择器包括：<br>标签选择器：通过标签名选取元素，如 p、h1、div 等。<br>类选择器：以 “.” 开头，选取具有相同类名的元素，如 .red、.bold 等。<br>ID 选择器：以 “#” 开头，选取具有相同 ID 的元素，如 #header、#content 等。<br>属性选择器：根据元素的属性值选取元素，如 [href]、[title]、[src] 等。<br>后代选择器：选取元素的后代元素，如 div p 选取所有 div 元素的后代 p 元素。<br>相邻兄弟选择器：选取元素的相邻兄弟元素，如 h1 + p 选取紧接在 h1 元素后面的 p 元素。<br>通用选择器：选取所有元素，使用 * 表示。<br>CSS 选择器的优先级按照如下规则计算：<br>标签内部样式（内联样式）具有最高优先级，其次是 ID 选择器，然后是类选择器和属性选择器，最后是标签选择器和通用选择器。<br>如果存在多个选择器的优先级相同，那么后面出现的选择器具有更高的优先级。<br>!important 声明具有最高优先级。<br>使用 CSS 选择器，可以选择页面中的特定元素，并对其应用样式，从而实现对页面布局和样式的控制。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="什么是-HTML5，HTML5-有哪些新特性？"><a href="#什么是-HTML5，HTML5-有哪些新特性？" class="headerlink" title="什么是 HTML5，HTML5 有哪些新特性？"></a>什么是 HTML5，HTML5 有哪些新特性？</h3>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;有哪些常用的-HTML-标签？&quot;&gt;&lt;a href=&quot;#有哪些常用的-HTML-标签？&quot; class=&quot;headerlink&quot; title=&quot;有哪些常用的 HTML 标签？&quot;&gt;&lt;/a&gt;有哪些常用的 HTML 标签？&lt;/h3&gt;&lt;p&gt;HTML（Hyper Text Ma</summary>
+    <summary type="html">&lt;h3 id=&quot;什么是-HTML5，HTML5-有哪些新特性？&quot;&gt;&lt;a href=&quot;#什么是-HTML5，HTML5-有哪些新特性？&quot; class=&quot;headerlink&quot; title=&quot;什么是 HTML5，HTML5 有哪些新特性？&quot;&gt;&lt;/a&gt;什么是 HTML5，HTML5 有</summary>
       
     
     
@@ -37,18 +37,18 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2023/02/17/hello-world/"/>
-    <id>http://example.com/2023/02/17/hello-world/</id>
-    <published>2023-02-17T15:16:51.321Z</published>
-    <updated>2023-02-17T15:16:51.321Z</updated>
+    <title>Day1前端面试题</title>
+    <link href="http://example.com/2023/02/17/Day1%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/02/17/Day1%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-02-17T15:17:22.000Z</published>
+    <updated>2023-02-27T13:03:33.782Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="有哪些常用的-HTML-标签？"><a href="#有哪些常用的-HTML-标签？" class="headerlink" title="有哪些常用的 HTML 标签？"></a>有哪些常用的 HTML 标签？</h3><p>HTML（Hyper Text Markup Language）是一种用于创建 Web 页面的标准标记语言。<br>常用的 HTML 标签有：<br>标题标签（h1~h6）：定义页面中的标题，h1 表示最高级别的标题，h6 表示最低级别的标题。<br>段落标签（p）：定义一个段落，通常用于组织页面内容。<br>链接标签（a）：定义一个超链接，指向另一个文档或 Web 页面。<br>图像标签（img）：插入一个图像，可以通过指定图像的 URL 或相对路径来显示。<br>列表标签（ul、ol、li）：用于创建无序列表和有序列表。<br>表格标签（table、tr、th、td）：用于创建表格。<br>表单标签（form、input、textarea、select、button）：用于创建用户输入表单。<br>样式标签（style）：定义 CSS 样式。<br>脚本标签（script）：用于嵌入 JavaScript 脚本代码。<br>分割线标签（hr）：用于在页面中插入一条水平分割线。<br>以上是一些常用的 HTML 标签，通过组合使用这些标签，可以创建出各种复杂的 Web 页面。</p><h3 id="CSS-选择器有哪些？优先级分别是什么？"><a href="#CSS-选择器有哪些？优先级分别是什么？" class="headerlink" title="CSS 选择器有哪些？优先级分别是什么？"></a>CSS 选择器有哪些？优先级分别是什么？</h3><p>CSS 选择器可以根据不同的属性、标签名、类名、ID 等条件来选择页面中的元素，常用的选择器包括：<br>标签选择器：通过标签名选取元素，如 p、h1、div 等。<br>类选择器：以 “.” 开头，选取具有相同类名的元素，如 .red、.bold 等。<br>ID 选择器：以 “#” 开头，选取具有相同 ID 的元素，如 #header、#content 等。<br>属性选择器：根据元素的属性值选取元素，如 [href]、[title]、[src] 等。<br>后代选择器：选取元素的后代元素，如 div p 选取所有 div 元素的后代 p 元素。<br>相邻兄弟选择器：选取元素的相邻兄弟元素，如 h1 + p 选取紧接在 h1 元素后面的 p 元素。<br>通用选择器：选取所有元素，使用 * 表示。<br>CSS 选择器的优先级按照如下规则计算：<br>标签内部样式（内联样式）具有最高优先级，其次是 ID 选择器，然后是类选择器和属性选择器，最后是标签选择器和通用选择器。<br>如果存在多个选择器的优先级相同，那么后面出现的选择器具有更高的优先级。<br>!important 声明具有最高优先级。<br>使用 CSS 选择器，可以选择页面中的特定元素，并对其应用样式，从而实现对页面布局和样式的控制。</p><h3 id="有哪些常见的-CSS-布局？"><a href="#有哪些常见的-CSS-布局？" class="headerlink" title="有哪些常见的 CSS 布局？"></a>有哪些常见的 CSS 布局？</h3><p>CSS 布局是指在网页上排版并定位元素的方式，常见的 CSS 布局包括：<br>盒模型布局：盒模型布局是指通过设置元素的 margin、padding、border 等属性，控制元素在页面中的位置和大小。<br>浮动布局：浮动布局是通过设置元素的 float 属性，使元素脱离文档流并向左或向右浮动，从而实现对页面布局的控制。<br>定位布局：定位布局是指通过设置元素的 position 属性为 relative、absolute 或 fixed，控制元素在页面上的位置。<br>弹性布局：弹性布局是通过设置元素的 display 属性为 flex 或 inline-flex，控制元素在页面中的位置和大小，从而实现响应式布局。<br>网格布局：网格布局是通过设置元素的 display 属性为 grid，使用网格线将页面分为若干行和列，控制元素在页面中的位置和大小。<br>以上是常见的 CSS 布局，开发者可以根据具体的需求和情况选择合适的布局方式，从而实现对页面布局和样式的控制。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h3 id=&quot;有哪些常用的-HTML-标签？&quot;&gt;&lt;a href=&quot;#有哪些常用的-HTML-标签？&quot; class=&quot;headerlink&quot; title=&quot;有哪些常用的 HTML 标签？&quot;&gt;&lt;/a&gt;有哪些常用的 HTML 标签？&lt;/h3&gt;&lt;p&gt;HTML（Hyper Text Ma</summary>
       
     
     
