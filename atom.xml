@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>前端面试题挑战</title>
+  <title>韩昊洋博客</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-27T14:51:28.982Z</updated>
+  <updated>2023-02-28T04:03:17.369Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day9前端面试题</title>
+    <link href="http://example.com/2023/02/28/Day9%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/02/28/Day9%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-02-28T03:59:18.000Z</published>
+    <updated>2023-02-28T04:03:17.369Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="用-CSS-和-JS-来实现动画分别有哪些优缺点？"><a href="#用-CSS-和-JS-来实现动画分别有哪些优缺点？" class="headerlink" title="用 CSS 和 JS 来实现动画分别有哪些优缺点？"></a>用 CSS 和 JS 来实现动画分别有哪些优缺点？</h1><p>用 CSS 和 JS 来实现动画各有其优缺点，具体如下：</p><p>使用 CSS 实现动画的优缺点：</p><p>优点：</p><ol><li>硬件加速：CSS 动画会使用浏览器的 GPU 来进行硬件加速，能够更加流畅和高效地运行。</li><li>简单易用：CSS 动画通常只需要几行代码就能实现基本的动画效果，不需要使用 JavaScript 来控制动画。</li><li>低资源占用：CSS 动画通常比 JavaScript 动画使用更少的 CPU 和内存资源，因此更适合用于简单的动画效果。</li></ol><p>缺点：</p><ol><li>限制较大：CSS 动画在实现复杂的动画效果时，受到限制较大，不能像 JavaScript 动画那样自由控制动画的速度、方向等。</li><li>兼容性问题：由于不同浏览器对 CSS 动画支持程度不同，因此在实现时需要考虑浏览器兼容性问题。</li><li>可维护性差：当动画效果较为复杂时，使用 CSS 实现的代码会变得冗长和难以维护，因此需要进行代码优化和结构设计。</li></ol><p>使用 JavaScript 实现动画的优缺点：</p><p>优点：</p><ol><li>自由控制：JavaScript 动画能够更加自由地控制动画的速度、方向等，可以实现更加复杂的动画效果。</li><li>兼容性好：由于 JavaScript 是浏览器通用的语言，因此在实现动画效果时，能够更好地兼容不同的浏览器。</li><li>可维护性强：使用 JavaScript 实现动画时，代码结构更加灵活，能够更好地维护和扩展。</li></ol><p>缺点：</p><ol><li>资源占用高：JavaScript 动画通常需要更多的 CPU 和内存资源，因此在实现动画效果时需要考虑系统资源的消耗问题。</li><li>性能问题：JavaScript 动画性能受 JavaScript 引擎的影响，而不是浏览器引擎，因此需要对代码进行优化以提高动画性能。</li><li>复杂度高：JavaScript 动画的实现复杂度通常比 CSS 动画高，因此需要对动画效果进行设计和规划。</li></ol><h1 id="JS-中怎么阻止事件冒泡和事件默认行为？"><a href="#JS-中怎么阻止事件冒泡和事件默认行为？" class="headerlink" title="JS 中怎么阻止事件冒泡和事件默认行为？"></a>JS 中怎么阻止事件冒泡和事件默认行为？</h1><p>在 JavaScript 中，可以通过以下方式阻止事件的冒泡和默认行为：</p><p>阻止事件冒泡： 事件冒泡是指当一个子元素触发了某个事件后，事件会一直冒泡到它的父元素，直到到达文档根节点。为了阻止事件冒泡，可以使用事件对象的 stopPropagation() 方法。例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;child&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// 阻止事件冒泡</span></span><br><span class="line">  event.<span class="title function_">stopPropagation</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>上面的代码中，当子元素被点击时，事件不会继续冒泡到父元素。</p><p>阻止事件默认行为：</p><p>事件的默认行为是指事件发生时，浏览器会默认执行的一些操作，例如提交表单、打开链接等。为了阻止事件的默认行为，可以使用事件对象的 preventDefault() 方法。例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;link&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// 阻止链接的默认跳转行为</span></span><br><span class="line">  event.<span class="title function_">preventDefault</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>上面的代码中，当链接被点击时，链接不会跳转到指定的地址。</p><p>需要注意的是，阻止事件的冒泡和默认行为可能会影响用户体验，因此需要谨慎使用。在一些场景下，可以使用阻止事件传播的方式来实现事件委托、事件代理等功能。</p><h1 id="什么是-webpack？它有什么作用？"><a href="#什么是-webpack？它有什么作用？" class="headerlink" title="什么是 webpack？它有什么作用？"></a>什么是 webpack？它有什么作用？</h1><p>Webpack 是一个开源的前端打包工具，它主要用于将多个 JavaScript 文件打包成一个或多个文件，以便在浏览器中加载。Webpack 的核心功能是对模块进行打包，并支持多种资源的加载和打包，如 JavaScript、CSS、图片、字体等。</p><p>Webpack 的主要作用包括：</p><ol><li>模块化：Webpack 支持各种模块化规范，包括 ES6、CommonJS、AMD 等，可以将应用程序拆分为多个模块，方便管理和维护。</li><li>资源加载：Webpack 可以处理各种类型的文件，包括 JavaScript、CSS、图片、字体等，可以将这些文件作为模块进行加载和打包。</li><li>代码压缩：Webpack 可以对代码进行压缩和混淆，减小文件体积，提高页面加载速度。</li><li>代码分割：Webpack 可以将应用程序拆分成多个 chunk，从而实现按需加载，减小首屏加载时间。</li><li>模块热替换：Webpack 支持模块热替换，可以在开发过程中快速预览应用程序的变化，提高开发效率。</li><li>优化打包速度：Webpack 可以使用多线程打包、缓存等技术，优化打包速度。</li></ol><p>需要注意的是，Webpack 本身只是一个打包工具，对于项目的构建和管理，通常需要结合其他工具和插件一起使用，如 Babel、ESLint、PostCSS、Vue Loader 等。同时，Webpack 的配置也比较复杂，需要一定的学习成本。但是一旦熟练掌握，Webpack 可以大大提高项目的可维护性和开发效率。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;用-CSS-和-JS-来实现动画分别有哪些优缺点？&quot;&gt;&lt;a href=&quot;#用-CSS-和-JS-来实现动画分别有哪些优缺点？&quot; class=&quot;headerlink&quot; title=&quot;用 CSS 和 JS 来实现动画分别有哪些优缺点？&quot;&gt;&lt;/a&gt;用 CSS 和 JS </summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Day8前端面试题</title>
