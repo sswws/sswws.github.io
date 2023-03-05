@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-03T02:27:40.201Z</updated>
+  <updated>2023-03-05T11:22:24.313Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day14前端面试题</title>
+    <link href="http://example.com/2023/03/05/Day14%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/03/05/Day14%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-03-05T11:19:59.000Z</published>
+    <updated>2023-03-05T11:22:24.313Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS-如何顺序执行-10-个异步任务？"><a href="#JS-如何顺序执行-10-个异步任务？" class="headerlink" title="JS 如何顺序执行 10 个异步任务？"></a>JS 如何顺序执行 10 个异步任务？</h1><p>JS 中可以使用 Promise 和 async&#x2F;await 来顺序执行异步任务。</p><p>使用 Promise 可以通过 then() 方法的链式调用来实现顺序执行异步任务，例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">asyncTask1</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Async task 1&quot;</span>);</span><br><span class="line">      <span class="title function_">resolve</span>();</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">asyncTask2</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Async task 2&quot;</span>);</span><br><span class="line">      <span class="title function_">resolve</span>();</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顺序执行异步任务</span></span><br><span class="line"><span class="title function_">asyncTask1</span>()</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">asyncTask2</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 执行完异步任务1和异步任务2后的逻辑</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure><p>使用 async&#x2F;await 可以将异步任务看作同步代码来执行，例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">runAsyncTasks</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">asyncTask1</span>();</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">asyncTask2</span>();</span><br><span class="line">  <span class="comment">// 执行完异步任务1和异步任务2后的逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">runAsyncTasks</span>();</span><br></pre></td></tr></table></figure><p>在这里，runAsyncTasks() 函数会先执行异步任务 1，等待异步任务 1 完成后再执行异步任务 2。</p><h1 id="React-组件间怎么进行通信？"><a href="#React-组件间怎么进行通信？" class="headerlink" title="React 组件间怎么进行通信？"></a>React 组件间怎么进行通信？</h1><p>React 组件间通信可以通过以下方式实现：</p><ol><li>Props 传递：父组件可以通过 Props 将数据传递给子组件，从而实现数据通信。</li><li>Context：Context 是 React 提供的一种组件间通信的机制，可以通过 Context 在组件树中传递数据，避免 Props 层层传递的麻烦。</li><li>Refs：Refs 允许我们直接操作组件实例或者 DOM 元素，从而实现组件间通信。</li><li>自定义事件：可以通过自定义事件的方式实现组件间的通信。在组件中定义一个事件，当需要在其他组件中触发这个事件时，可以通过回调函数的方式实现。</li><li>全局状态管理：使用全局状态管理工具（如 Redux、Mobx）来管理组件状态，从而实现组件间通信。</li></ol><p>需要根据实际场景选择适合的通信方式。</p><h1 id="介绍一下-JS-中-setTimeout-的运行机制？"><a href="#介绍一下-JS-中-setTimeout-的运行机制？" class="headerlink" title="介绍一下 JS 中 setTimeout 的运行机制？"></a>介绍一下 JS 中 setTimeout 的运行机制？</h1><p>在 JavaScript 中，setTimeout() 方法被用于在指定的时间间隔后执行一个指定的代码块。它接受两个参数：第一个参数是需要执行的代码块，第二个参数是代码块的延迟时间（以毫秒为单位）。setTimeout() 方法执行完毕后，代码块将被推入 JavaScript 的执行队列中，等待 JavaScript 引擎在一段时间后执行。</p><p>setTimeout() 方法具有异步的特性，因此即使 setTimeout() 方法指定了一个很短的时间，它也不会在调用代码之后立即执行。相反，它会将代码块放在事件队列的末尾，直到事件队列中没有任何待处理的任务，才会执行。因此，当代码块执行时，当前执行的上下文（也称为堆栈）已经被清空。</p><p>如果 setTimeout() 方法在代码块执行之前被清除或者代码块执行时间过长，那么代码块将会在 JavaScript 引擎空闲时尽快被执行。因此，setTimeout() 方法不是一个精确的时间控制器，而是一个粗略的时间控制器。如果需要更精确的时间控制器，可以考虑使用 requestAnimationFrame() 或 Web Workers。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;JS-如何顺序执行-10-个异步任务？&quot;&gt;&lt;a href=&quot;#JS-如何顺序执行-10-个异步任务？&quot; class=&quot;headerlink&quot; title=&quot;JS 如何顺序执行 10 个异步任务？&quot;&gt;&lt;/a&gt;JS 如何顺序执行 10 个异步任务？&lt;/h1&gt;&lt;p&gt;JS</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Day13前端面试题</title>
+    <link href="http://example.com/2023/03/05/Day13%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/03/05/Day13%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-03-05T11:17:57.000Z</published>
+    <updated>2023-03-05T11:19:37.828Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS-中，有哪些方式可以隐藏页面元素？有什么区别"><a href="#CSS-中，有哪些方式可以隐藏页面元素？有什么区别" class="headerlink" title="CSS 中，有哪些方式可以隐藏页面元素？有什么区别?"></a>CSS 中，有哪些方式可以隐藏页面元素？有什么区别?</h1><p>在 CSS 中，有以下几种方式可以隐藏页面元素：</p><ol><li>display: none;：完全隐藏元素，元素不占据任何空间。</li><li>visibility: hidden;：隐藏元素，但元素在页面中仍占据空间。</li><li>opacity: 0;：将元素的透明度设为 0，元素隐藏但仍占据空间。</li><li>position: absolute; left: -9999px;：将元素移出屏幕范围之外，元素隐藏但仍占据空间。</li><li>z-index: -1;：将元素的层级设置为负数，元素隐藏但仍占据空间。</li></ol><p>这些方式的区别在于是否占据空间和是否可见，开发者可以根据实际情况选择不同的方式来隐藏页面元素。</p><h1 id="什么是-JS-对象的可枚举性（enumerable）？"><a href="#什么是-JS-对象的可枚举性（enumerable）？" class="headerlink" title="什么是 JS 对象的可枚举性（enumerable）？"></a>什么是 JS 对象的可枚举性（enumerable）？</h1><p>JS 对象的可枚举性指的是对象的某些属性是否可以被 for…in 循环枚举到。每个对象属性都有一个可枚举性标识，这个标识决定了这个属性是否可以被枚举。在对象属性创建时，可以通过 Object.defineProperty() 方法的 enumerable 属性来设置这个属性是否可枚举，默认为 true。</p><p>有些内置对象的属性是不可枚举的，例如 Object.prototype 上的属性，这些属性可以通过 Object.getOwnPropertyNames() 方法获取。</p><p>在 ES6 中，引入了 Object.keys()、Object.values() 和 Object.entries() 方法来获取对象可枚举属性的键、值和键值对。同时，也提供了 Reflect.enumerate() 方法来获取对象的所有属性（包括不可枚举属性），但该方法已经被废弃。</p><h1 id="Vue-中-computed-和-watch-区别？分别适用于什么场景？"><a href="#Vue-中-computed-和-watch-区别？分别适用于什么场景？" class="headerlink" title="Vue 中 computed 和 watch 区别？分别适用于什么场景？"></a>Vue 中 computed 和 watch 区别？分别适用于什么场景？</h1><p>Vue 中的 computed 和 watch 是两种用于响应式数据更新的方法。</p><p>computed 是计算属性，它会根据响应式数据的变化自动计算出新的值，并缓存结果，只有在计算属性所依赖的响应式数据发生改变时才会重新计算。computed 适用于需要根据响应式数据计算得出结果的场景，例如根据商品的数量和单价计算商品的总价，或者根据选中的过滤条件过滤出数据列表。</p><p>watch 是侦听器，它可以监听指定的响应式数据的变化，并在数据发生改变时执行指定的回调函数。watch 适用于需要执行一些异步或复杂操作的场景，例如监听表单输入框的变化并发送 Ajax 请求，或者监听路由变化并根据路由参数切换页面。</p><p>总的来说，computed 适用于计算数据的场景，而 watch 适用于需要执行异步或复杂操作的场景。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;CSS-中，有哪些方式可以隐藏页面元素？有什么区别&quot;&gt;&lt;a href=&quot;#CSS-中，有哪些方式可以隐藏页面元素？有什么区别&quot; class=&quot;headerlink&quot; title=&quot;CSS 中，有哪些方式可以隐藏页面元素？有什么区别?&quot;&gt;&lt;/a&gt;CSS 中，有哪些方</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Day12前端面试题</title>
