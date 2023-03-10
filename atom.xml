@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-09T09:06:33.041Z</updated>
+  <updated>2023-03-10T07:49:28.988Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day19前端面试题</title>
+    <link href="http://example.com/2023/03/10/Day19%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/03/10/Day19%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-03-10T07:46:22.000Z</published>
+    <updated>2023-03-10T07:49:28.988Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="为什么-JS-要被设计为单线程？"><a href="#为什么-JS-要被设计为单线程？" class="headerlink" title="为什么 JS 要被设计为单线程？"></a>为什么 JS 要被设计为单线程？</h1><p>JS 被设计为单线程的主要原因是为了避免多线程编程所带来的复杂性。如果 JS 是多线程的，那么在处理并发问题时，需要考虑锁、同步等一系列复杂的问题，这会增加代码的复杂度和开发难度。</p><p>此外，JS 最初是为了解决网页交互的问题而诞生的，而网页交互的需求大部分是基于用户事件的，比如点击按钮、输入文本等。这些操作的响应速度要求很高，如果在响应事件的同时还要处理其他任务，可能会导致网页卡顿、响应变慢等用户体验不佳的问题。</p><p>因此，为了避免多线程所带来的复杂性和降低开发难度，并且满足网页交互的高响应速度需求，JS 被设计为单线程。虽然单线程有局限性，但是可以通过异步编程、事件循环机制等技术手段来实现高效的并发处理。</p><h1 id="TypeScript-中的-Declare-关键字有什么用？"><a href="#TypeScript-中的-Declare-关键字有什么用？" class="headerlink" title="TypeScript 中的 Declare 关键字有什么用？"></a>TypeScript 中的 Declare 关键字有什么用？</h1><p>TypeScript 中的 declare 关键字用于声明一个变量、函数、类等的类型信息，但不实现其具体实现。它主要用于在编译时进行静态类型检查，并在编译后移除声明的代码，以减少 JavaScript 文件的大小。</p><p>使用 declare 关键字声明的类型信息可以是任何类型，如对象、函数、类、变量、命名空间等。常见的使用场景有：</p><p>声明全局变量或模块</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明全局变量</span></span><br><span class="line">declare <span class="keyword">const</span> <span class="attr">jQuery</span>: <span class="function">(<span class="params">selector: string</span>) =&gt;</span> any;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明模块</span></span><br><span class="line">declare <span class="variable language_">module</span> <span class="string">&quot;lodash&quot;</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">fn: <span class="built_in">Function</span>, wait: number</span>): <span class="title class_">Function</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>声明外部的 JavaScript 库</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">declare <span class="variable language_">module</span> <span class="string">&quot;some-library&quot;</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">someFunction</span>(<span class="params"></span>): <span class="keyword">void</span>;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">const</span> <span class="attr">someVariable</span>: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>声明命名空间</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">declare namespace <span class="title class_">MyNamespace</span> &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>通过使用 declare 关键字，可以让 TypeScript 在编译时检查代码的类型信息，并避免一些类型错误。同时，也可以提高代码的可读性和维护性。</p><h1 id="什么是-Node-js-中的-process？它有哪些方法和应用场景？"><a href="#什么是-Node-js-中的-process？它有哪些方法和应用场景？" class="headerlink" title="什么是 Node.js 中的 process？它有哪些方法和应用场景？"></a>什么是 Node.js 中的 process？它有哪些方法和应用场景？</h1><p>在 Node.js 中，process 是一个全局变量，它提供了与当前 Node.js 进程相关的信息和控制。process 对象是 EventEmitter 的一个实例，因此它可以使用 EventEmitter 的 API，例如注册事件监听器和触发事件。</p><p>process 对象的一些常用方法和属性：</p><ol><li>process.argv：返回一个数组，其中包含命令行参数。第一个元素是 Node.js 可执行文件的路径，第二个元素是正在执行的 JavaScript 文件的路径，后面的元素是命令行参数。</li><li>process.env：返回一个包含当前 Shell 环境变量的对象。</li><li>process.exit([code])：终止 Node.js 进程。如果指定了 code，那么进程将以 code 退出。</li><li>process.cwd()：返回当前工作目录的路径。</li><li>process.chdir(directory)：将 Node.js 进程的工作目录更改为 directory。</li><li>process.pid：返回 Node.js 进程的进程 ID。</li><li>process.nextTick(callback[, arg1][, arg2][, …])：将 callback 添加到下一个 tick 队列。callback 会在当前操作完成后、事件循环继续之前调用。</li><li>process.on(event, listener)：注册事件监听器。常用的事件包括 “exit”、”uncaughtException”、”SIGINT” 等。</li></ol><p>process 对象的应用场景：</p><ol><li>监听进程退出事件，执行资源清理操作。</li><li>通过 process.argv 读取命令行参数。</li><li>通过 process.env 读取环境变量。</li><li>通过 process.cwd 和 process.chdir 修改 Node.js 进程的工作目录。</li><li>通过 process.pid 获取进程 ID。</li><li>通过 process.nextTick 将某个操作放到下一个 tick 队列中，以实现异步执行。</li></ol><p>总之，process 对象提供了与 Node.js 进程相关的许多信息和控制，是 Node.js 编程中不可或缺的一部分。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;为什么-JS-要被设计为单线程？&quot;&gt;&lt;a href=&quot;#为什么-JS-要被设计为单线程？&quot; class=&quot;headerlink&quot; title=&quot;为什么 JS 要被设计为单线程？&quot;&gt;&lt;/a&gt;为什么 JS 要被设计为单线程？&lt;/h1&gt;&lt;p&gt;JS 被设计为单线程的主要原</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Day18前端面试题</title>
