@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-10T07:49:28.988Z</updated>
+  <updated>2023-03-11T08:28:40.735Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day20前端面试题</title>
+    <link href="http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-03-11T08:24:47.000Z</published>
+    <updated>2023-03-11T08:28:40.735Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS-代码中的-use-strict-是什么？有什么作用？"><a href="#JS-代码中的-use-strict-是什么？有什么作用？" class="headerlink" title="JS 代码中的 use strict 是什么？有什么作用？"></a>JS 代码中的 use strict 是什么？有什么作用？</h1><p>“use strict” 是 ECMAScript 5 引入的一种严格模式，它用于指示 JavaScript 引擎采用更严格的解析和执行模式。</p><p>当在 JavaScript 代码中使用 “use strict” 声明时，代码将会在严格模式下执行。严格模式包含了一些额外的规则和限制，有助于开发者避免一些常见的错误。</p><p>使用 “use strict” 的主要作用包括：</p><ol><li>消除 JavaScript 中的一些不合理、不安全的语法，减少代码出错的可能性。</li><li>防止使用未声明的变量、函数，强制开发者进行声明。</li><li>强制函数中的 this 值只能在函数内部使用，避免在全局作用域中误用 this 值。</li><li>禁止删除变量、函数等，避免意外删除重要的变量和函数。</li><li>提高代码性能，因为 JavaScript 引擎可以更好地进行优化。</li></ol><p>使用 “use strict” 的方式有两种：</p><ol><li>在 JavaScript 文件开头使用 “use strict”。</li><li>在函数体内第一条语句中使用 “use strict”。</li></ol><p>例如，在 JavaScript 文件开头使用 “use strict” 的方式如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>在函数体内第一条语句中使用 “use strict” 的方式如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>总之，”use strict” 是一种在 JavaScript 中使用严格模式的方法，它可以提高代码的可靠性和性能，避免一些常见的错误。</p><h1 id="什么是前后端分离？它有什么优点和缺点？"><a href="#什么是前后端分离？它有什么优点和缺点？" class="headerlink" title="什么是前后端分离？它有什么优点和缺点？"></a>什么是前后端分离？它有什么优点和缺点？</h1><p>前后端分离是指将前端和后端分别进行独立开发和部署。使前端和后端分别由不同的开发团队负责，通过 API 接口进行数据交互。前端负责页面展示和用户交互，后端负责业务逻辑和数据存储，两者通过 API 进行通信。</p><p>前后端分离的优点包括：</p><ol><li>分工明确：前端和后端分别由不同的开发团队负责，各司其职，有利于开发流程的管理和控制。</li><li>前后端解耦：前后端分离可以使前端和后端解耦，前端只关注页面展示和用户交互，后端只关注业务逻辑和数据存储，有利于模块化开发和维护。</li><li>更好的性能和用户体验：前后端分离可以使前端采用现代化的前端框架和技术，提高网站的性能和用户体验。</li><li>更好的可扩展性：前后端分离可以使后端提供更丰富的 API，方便前端进行开发和维护，同时也使得后端更易于扩展和修改。</li></ol><p>前后端分离的缺点包括：</p><ol><li>开发难度增加：前后端分离需要前端和后端分别进行开发，需要更多的协调和沟通，开发难度增加。</li><li>维护难度增加：前后端分离使得前端和后端的代码分离，需要分别进行维护，维护难度增加。</li><li>安全问题：前后端分离可能会导致一些安全问题，例如跨站点脚本攻击（XSS）和跨站点请求伪造（CSRF），需要采取相应的安全措施来解决。<br>总之，前后端分离有其优点和缺点。前后端分离可以提高开发效率、网站性能和用户体验，但也可能会增加开发和维护的难度，需要采取相应的措施来解决。</li></ol><h1 id="前端性能优化指标有哪些？怎么进行性能检测？"><a href="#前端性能优化指标有哪些？怎么进行性能检测？" class="headerlink" title="前端性能优化指标有哪些？怎么进行性能检测？"></a>前端性能优化指标有哪些？怎么进行性能检测？</h1><p>前端性能优化主要是通过一系列技术手段和优化策略来提升网站或应用的性能，从而提高用户的体验。下面列举一些常见的前端性能优化的指标和性能检测的方法：</p><ol><li>加载速度：网站或应用的加载速度是用户体验的重要因素。可以使用工具（如 WebPagetest、PageSpeed Insights）来测试网站或应用的加载速度，并通过优化图片大小、减少 HTTP 请求、使用浏览器缓存等方式来提升加载速度。</li><li>渲染速度：渲染速度是指页面加载完成后页面内容渲染的速度。可以使用 Chrome 开发者工具中的 Performance 面板来检测页面渲染速度，并通过减少 DOM 操作、使用 CSS3 动画、减少 JavaScript 的执行时间等方式来提升渲染速度。</li><li>响应速度：响应速度是指网站或应用处理请求的速度。可以使用工具（如 Pingdom、GTmetrix）来测试响应速度，并通过优化服务器响应时间、压缩 JavaScript 和 CSS 文件等方式来提升响应速度。</li><li>可访问性：可访问性是指网站或应用是否易于使用和访问。可以通过使用 HTML5、WAI-ARIA 标准、有意义的网页标题、有意义的链接等方式来提高可访问性。</li><li>移动端性能：随着移动设备的普及，移动端性能越来越重要。可以使用工具（如 Google Mobile-Friendly Test）来测试移动端性能，并通过使用响应式设计、优化图片和视频大小、使用 viewport meta 标签等方式来提高移动端性能。</li></ol><p>总结：前端性能优化指标包括加载速度、渲染速度、响应速度、可访问性和移动端性能等方面。可以使用各种工具来检测这些指标，并采取相应的优化策略来提高网站或应用的性能。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;JS-代码中的-use-strict-是什么？有什么作用？&quot;&gt;&lt;a href=&quot;#JS-代码中的-use-strict-是什么？有什么作用？&quot; class=&quot;headerlink&quot; title=&quot;JS 代码中的 use strict 是什么？有什么作用？&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Day19前端面试题</title>
