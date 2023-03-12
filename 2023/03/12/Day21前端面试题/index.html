@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day21前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="怎么使用 CSS3 来实现动画？你实现过哪些动画？CSS3 提供了丰富的动画效果，通过使用 CSS3 动画可以实现许多视觉效果，比如旋转、平移、缩放、淡入淡出等。 CSS3 动画的实现需要使用 @keyframes 规则和 animation 属性，具体的实现步骤如下： 定义关键帧 使用 @keyframes 规则定义动画关键帧。例如，定义一个旋转动画： 1234@keyframes spin &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day21前端面试题">
+<meta property="og:url" content="http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="怎么使用 CSS3 来实现动画？你实现过哪些动画？CSS3 提供了丰富的动画效果，通过使用 CSS3 动画可以实现许多视觉效果，比如旋转、平移、缩放、淡入淡出等。 CSS3 动画的实现需要使用 @keyframes 规则和 animation 属性，具体的实现步骤如下： 定义关键帧 使用 @keyframes 规则定义动画关键帧。例如，定义一个旋转动画： 1234@keyframes spin &amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-12T13:06:19.000Z">
+<meta property="article:modified_time" content="2023-03-12T13:09:10.428Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day21前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-12 21:09:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day21前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-12T13:06:19.000Z" title="Created 2023-03-12 21:06:19">2023-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-12T13:09:10.428Z" title="Updated 2023-03-12 21:09:10">2023-03-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day21前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="怎么使用-CSS3-来实现动画？你实现过哪些动画？"><a href="#怎么使用-CSS3-来实现动画？你实现过哪些动画？" class="headerlink" title="怎么使用 CSS3 来实现动画？你实现过哪些动画？"></a>怎么使用 CSS3 来实现动画？你实现过哪些动画？</h1><p>CSS3 提供了丰富的动画效果，通过使用 CSS3 动画可以实现许多视觉效果，比如旋转、平移、缩放、淡入淡出等。</p>
+<p>CSS3 动画的实现需要使用 @keyframes 规则和 animation 属性，具体的实现步骤如下：</p>
+<p>定义关键帧 使用 @keyframes 规则定义动画关键帧。例如，定义一个旋转动画：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@keyframes spin &#123;</span><br><span class="line">  <span class="keyword">from</span> &#123; <span class="attr">transform</span>: <span class="title function_">rotate</span>(0deg); &#125;</span><br><span class="line">  to &#123; <span class="attr">transform</span>: <span class="title function_">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个关键帧定义了从 0 度到 360 度的旋转动画。</p>
+<p>应用动画 使用 animation 属性将动画应用到元素上。例如，将上面定义的 spin 动画应用到一个元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  <span class="attr">animation</span>: spin 2s linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个样式定义了一个 2 秒线性旋转动画，并且无限循环。</p>
+<p>CSS3 动画的优点在于它不需要使用 JavaScript，可以通过 CSS 代码实现各种复杂的动画效果，并且动画效果比使用 JavaScript 实现的动画效果更加平滑。</p>
+<p>在实际开发中，我们可以使用 CSS3 动画来实现各种动态效果，比如页面切换、元素滚动、菜单展开等。具体实现要根据具体的需求来选择使用哪种动画效果，一些常见的动画效果包括：</p>
+<ol>
+<li>淡入淡出</li>
+<li>旋转</li>
+<li>缩放</li>
+<li>平移</li>
+<li>拉伸</li>
+<li>闪烁 我们可以使用 CSS3 动画来实现这些效果，提高用户体验和交互性。</li>
+</ol>
+<h1 id="如何使用-JS-判断某个字符串长度（要求支持-Emoji-表情）？"><a href="#如何使用-JS-判断某个字符串长度（要求支持-Emoji-表情）？" class="headerlink" title="如何使用 JS 判断某个字符串长度（要求支持 Emoji 表情）？"></a>如何使用 JS 判断某个字符串长度（要求支持 Emoji 表情）？</h1><p>在 JavaScript 中，可以使用 String 类型的 length 属性来获取字符串的长度。但是，由于 Emoji 表情在字符串中占用了两个字符的位置，因此直接使用 length 属性得到的结果并不准确。</p>
+<p>为了正确地获取字符串的长度，可以使用如下的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算字符串的长度（支持 Emoji 表情）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">str</span> - 要计算长度的字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">number</span>&#125; - 字符串的长度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getLength</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> length = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> code = str.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">    <span class="keyword">if</span> (code &gt;= <span class="number">0xd800</span> &amp;&amp; code &lt;= <span class="number">0xdbff</span>) &#123;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">    length++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>举个例子，对于字符串 “Hello,🌍!”，使用该函数计算出的长度为 8，而使用 length 属性计算出的长度则为 9。</p>
+<h1 id="Vue-Router-路由有哪些模式？各模式有什么区别？"><a href="#Vue-Router-路由有哪些模式？各模式有什么区别？" class="headerlink" title="Vue Router 路由有哪些模式？各模式有什么区别？"></a>Vue Router 路由有哪些模式？各模式有什么区别？</h1><p>Vue Router 路由有三种模式：</p>
+<ol>
+<li>hash 模式：使用 URL 中的 hash（即 # 后面的内容）来作为路由路径。这种模式下，页面不会重新加载，只会更新 hash 值，并触发路由变化，从而渲染对应的组件。</li>
+<li>history 模式：使用 HTML5 中新增的 History API 来管理浏览历史记录，从而实现页面的前进和后退。在这种模式下，URL 中不会带有 # 号，而是使用真实的 URL 路径来作为路由路径。</li>
+<li>abstract 模式：在不需要基于浏览器的 API 时，可以使用这种模式。在这种模式下，路由器并不会监听 URL 变化，而是通过调用 router.replace 或 router.push 来进行导航。</li>
+</ol>
+<p>区别：</p>
+<ol>
+<li>hash 模式可以兼容较老的浏览器，但 URL 中会带有 # 号。</li>
+<li>history 模式无需带有 # 号，更加美观，但需要后端支持，否则刷新页面会导致 404 错误。</li>
+<li>abstract 模式主要用于一些特定场景，例如在使用 Node.js 时，可以使用 abstract 模式来构建路由。</li>
+</ol>
+<p>一般来说，如果需要支持较老的浏览器，或者不需要后端支持，可以使用 hash 模式；否则建议使用 history 模式。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day20前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day20前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-CSS3-%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%EF%BC%9F%E4%BD%A0%E5%AE%9E%E7%8E%B0%E8%BF%87%E5%93%AA%E4%BA%9B%E5%8A%A8%E7%94%BB%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">怎么使用 CSS3 来实现动画？你实现过哪些动画？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-JS-%E5%88%A4%E6%96%AD%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%EF%BC%88%E8%A6%81%E6%B1%82%E6%94%AF%E6%8C%81-Emoji-%E8%A1%A8%E6%83%85%EF%BC%89%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何使用 JS 判断某个字符串长度（要求支持 Emoji 表情）？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-Router-%E8%B7%AF%E7%94%B1%E6%9C%89%E5%93%AA%E4%BA%9B%E6%A8%A1%E5%BC%8F%EF%BC%9F%E5%90%84%E6%A8%A1%E5%BC%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Vue Router 路由有哪些模式？各模式有什么区别？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day21前端面试题">Day21前端面试题</a><time datetime="2023-03-12T13:06:19.000Z" title="Created 2023-03-12 21:06:19">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day20前端面试题">Day20前端面试题</a><time datetime="2023-03-11T08:24:47.000Z" title="Created 2023-03-11 16:24:47">2023-03-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/10/Day19%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day19前端面试题">Day19前端面试题</a><time datetime="2023-03-10T07:46:22.000Z" title="Created 2023-03-10 15:46:22">2023-03-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/09/Day18%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day18前端面试题">Day18前端面试题</a><time datetime="2023-03-09T09:01:05.000Z" title="Created 2023-03-09 17:01:05">2023-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/08/Day17%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day17前端面试题">Day17前端面试题</a><time datetime="2023-03-08T02:08:35.000Z" title="Created 2023-03-08 10:08:35">2023-03-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-11T08:28:40.735Z</updated>
+  <updated>2023-03-12T13:09:10.428Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day21前端面试题</title>
+    <link href="http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2023-03-12T13:06:19.000Z</published>
+    <updated>2023-03-12T13:09:10.428Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="怎么使用-CSS3-来实现动画？你实现过哪些动画？"><a href="#怎么使用-CSS3-来实现动画？你实现过哪些动画？" class="headerlink" title="怎么使用 CSS3 来实现动画？你实现过哪些动画？"></a>怎么使用 CSS3 来实现动画？你实现过哪些动画？</h1><p>CSS3 提供了丰富的动画效果，通过使用 CSS3 动画可以实现许多视觉效果，比如旋转、平移、缩放、淡入淡出等。</p><p>CSS3 动画的实现需要使用 @keyframes 规则和 animation 属性，具体的实现步骤如下：</p><p>定义关键帧 使用 @keyframes 规则定义动画关键帧。例如，定义一个旋转动画：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@keyframes spin &#123;</span><br><span class="line">  <span class="keyword">from</span> &#123; <span class="attr">transform</span>: <span class="title function_">rotate</span>(0deg); &#125;</span><br><span class="line">  to &#123; <span class="attr">transform</span>: <span class="title function_">rotate</span>(360deg); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个关键帧定义了从 0 度到 360 度的旋转动画。</p><p>应用动画 使用 animation 属性将动画应用到元素上。例如，将上面定义的 spin 动画应用到一个元素：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  <span class="attr">animation</span>: spin 2s linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个样式定义了一个 2 秒线性旋转动画，并且无限循环。</p><p>CSS3 动画的优点在于它不需要使用 JavaScript，可以通过 CSS 代码实现各种复杂的动画效果，并且动画效果比使用 JavaScript 实现的动画效果更加平滑。</p><p>在实际开发中，我们可以使用 CSS3 动画来实现各种动态效果，比如页面切换、元素滚动、菜单展开等。具体实现要根据具体的需求来选择使用哪种动画效果，一些常见的动画效果包括：</p><ol><li>淡入淡出</li><li>旋转</li><li>缩放</li><li>平移</li><li>拉伸</li><li>闪烁 我们可以使用 CSS3 动画来实现这些效果，提高用户体验和交互性。</li></ol><h1 id="如何使用-JS-判断某个字符串长度（要求支持-Emoji-表情）？"><a href="#如何使用-JS-判断某个字符串长度（要求支持-Emoji-表情）？" class="headerlink" title="如何使用 JS 判断某个字符串长度（要求支持 Emoji 表情）？"></a>如何使用 JS 判断某个字符串长度（要求支持 Emoji 表情）？</h1><p>在 JavaScript 中，可以使用 String 类型的 length 属性来获取字符串的长度。但是，由于 Emoji 表情在字符串中占用了两个字符的位置，因此直接使用 length 属性得到的结果并不准确。</p><p>为了正确地获取字符串的长度，可以使用如下的方法：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算字符串的长度（支持 Emoji 表情）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">str</span> - 要计算长度的字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">number</span>&#125; - 字符串的长度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getLength</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> length = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> code = str.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">    <span class="keyword">if</span> (code &gt;= <span class="number">0xd800</span> &amp;&amp; code &lt;= <span class="number">0xdbff</span>) &#123;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">    length++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>举个例子，对于字符串 “Hello,🌍!”，使用该函数计算出的长度为 8，而使用 length 属性计算出的长度则为 9。</p><h1 id="Vue-Router-路由有哪些模式？各模式有什么区别？"><a href="#Vue-Router-路由有哪些模式？各模式有什么区别？" class="headerlink" title="Vue Router 路由有哪些模式？各模式有什么区别？"></a>Vue Router 路由有哪些模式？各模式有什么区别？</h1><p>Vue Router 路由有三种模式：</p><ol><li>hash 模式：使用 URL 中的 hash（即 # 后面的内容）来作为路由路径。这种模式下，页面不会重新加载，只会更新 hash 值，并触发路由变化，从而渲染对应的组件。</li><li>history 模式：使用 HTML5 中新增的 History API 来管理浏览历史记录，从而实现页面的前进和后退。在这种模式下，URL 中不会带有 # 号，而是使用真实的 URL 路径来作为路由路径。</li><li>abstract 模式：在不需要基于浏览器的 API 时，可以使用这种模式。在这种模式下，路由器并不会监听 URL 变化，而是通过调用 router.replace 或 router.push 来进行导航。</li></ol><p>区别：</p><ol><li>hash 模式可以兼容较老的浏览器，但 URL 中会带有 # 号。</li><li>history 模式无需带有 # 号，更加美观，但需要后端支持，否则刷新页面会导致 404 错误。</li><li>abstract 模式主要用于一些特定场景，例如在使用 Node.js 时，可以使用 abstract 模式来构建路由。</li></ol><p>一般来说，如果需要支持较老的浏览器，或者不需要后端支持，可以使用 hash 模式；否则建议使用 history 模式。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;怎么使用-CSS3-来实现动画？你实现过哪些动画？&quot;&gt;&lt;a href=&quot;#怎么使用-CSS3-来实现动画？你实现过哪些动画？&quot; class=&quot;headerlink&quot; title=&quot;怎么使用 CSS3 来实现动画？你实现过哪些动画？&quot;&gt;&lt;/a&gt;怎么使用 CSS3 来</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Day20前端面试题</title>
@@ -389,26 +409,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;什么是-HTML5，HTML5-有哪些新特性？&quot;&gt;&lt;a href=&quot;#什么是-HTML5，HTML5-有哪些新特性？&quot; class=&quot;headerlink&quot; title=&quot;什么是 HTML5，HTML5 有哪些新特性？&quot;&gt;&lt;/a&gt;什么是 HTML5，HTML5 有</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Day1前端面试题</title>
-    <link href="http://example.com/2023/02/17/Day1%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>http://example.com/2023/02/17/Day1%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
-    <published>2023-02-17T15:17:22.000Z</published>
-    <updated>2023-02-27T14:01:10.809Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="有哪些常用的-HTML-标签？"><a href="#有哪些常用的-HTML-标签？" class="headerlink" title="有哪些常用的 HTML 标签？"></a>有哪些常用的 HTML 标签？</h1><p>HTML（Hyper Text Markup Language）是一种用于创建 Web 页面的标准标记语言。<br>常用的 HTML 标签有：<br>标题标签（h1~h6）：定义页面中的标题，h1 表示最高级别的标题，h6 表示最低级别的标题。<br>段落标签（p）：定义一个段落，通常用于组织页面内容。<br>链接标签（a）：定义一个超链接，指向另一个文档或 Web 页面。<br>图像标签（img）：插入一个图像，可以通过指定图像的 URL 或相对路径来显示。<br>列表标签（ul、ol、li）：用于创建无序列表和有序列表。<br>表格标签（table、tr、th、td）：用于创建表格。<br>表单标签（form、input、textarea、select、button）：用于创建用户输入表单。<br>样式标签（style）：定义 CSS 样式。<br>脚本标签（script）：用于嵌入 JavaScript 脚本代码。<br>分割线标签（hr）：用于在页面中插入一条水平分割线。<br>以上是一些常用的 HTML 标签，通过组合使用这些标签，可以创建出各种复杂的 Web 页面。</p><h1 id="CSS-选择器有哪些？优先级分别是什么？"><a href="#CSS-选择器有哪些？优先级分别是什么？" class="headerlink" title="CSS 选择器有哪些？优先级分别是什么？"></a>CSS 选择器有哪些？优先级分别是什么？</h1><p>CSS 选择器可以根据不同的属性、标签名、类名、ID 等条件来选择页面中的元素，常用的选择器包括：<br>标签选择器：通过标签名选取元素，如 p、h1、div 等。<br>类选择器：以 “.” 开头，选取具有相同类名的元素，如 .red、.bold 等。<br>ID 选择器：以 “#” 开头，选取具有相同 ID 的元素，如 #header、#content 等。<br>属性选择器：根据元素的属性值选取元素，如 [href]、[title]、[src] 等。<br>后代选择器：选取元素的后代元素，如 div p 选取所有 div 元素的后代 p 元素。<br>相邻兄弟选择器：选取元素的相邻兄弟元素，如 h1 + p 选取紧接在 h1 元素后面的 p 元素。<br>通用选择器：选取所有元素，使用 * 表示。<br>CSS 选择器的优先级按照如下规则计算：<br>标签内部样式（内联样式）具有最高优先级，其次是 ID 选择器，然后是类选择器和属性选择器，最后是标签选择器和通用选择器。<br>如果存在多个选择器的优先级相同，那么后面出现的选择器具有更高的优先级。<br>!important 声明具有最高优先级。<br>使用 CSS 选择器，可以选择页面中的特定元素，并对其应用样式，从而实现对页面布局和样式的控制。</p><h1 id="有哪些常见的-CSS-布局？"><a href="#有哪些常见的-CSS-布局？" class="headerlink" title="有哪些常见的 CSS 布局？"></a>有哪些常见的 CSS 布局？</h1><p>CSS 布局是指在网页上排版并定位元素的方式，常见的 CSS 布局包括：<br>盒模型布局：盒模型布局是指通过设置元素的 margin、padding、border 等属性，控制元素在页面中的位置和大小。<br>浮动布局：浮动布局是通过设置元素的 float 属性，使元素脱离文档流并向左或向右浮动，从而实现对页面布局的控制。<br>定位布局：定位布局是指通过设置元素的 position 属性为 relative、absolute 或 fixed，控制元素在页面上的位置。<br>弹性布局：弹性布局是通过设置元素的 display 属性为 flex 或 inline-flex，控制元素在页面中的位置和大小，从而实现响应式布局。<br>网格布局：网格布局是通过设置元素的 display 属性为 grid，使用网格线将页面分为若干行和列，控制元素在页面中的位置和大小。<br>以上是常见的 CSS 布局，开发者可以根据具体的需求和情况选择合适的布局方式，从而实现对页面布局和样式的控制。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;有哪些常用的-HTML-标签？&quot;&gt;&lt;a href=&quot;#有哪些常用的-HTML-标签？&quot; class=&quot;headerlink&quot; title=&quot;有哪些常用的 HTML 标签？&quot;&gt;&lt;/a&gt;有哪些常用的 HTML 标签？&lt;/h1&gt;&lt;p&gt;HTML（Hyper Text Ma</summary>
       
     
     
