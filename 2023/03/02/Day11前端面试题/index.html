@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day11前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前端有哪些实现跨页面通信的方法？前端有以下几种实现跨页面通信的方法：  Cookie：通过在页面间共享 Cookie 实现简单的跨页面通信，但是 Cookie 大小有限制，不能存储过多的数据。 localStorage 和 sessionStorage：HTML5 提供了本地存储的能力，可以通过 localStorage 或 sessionStorage 实现页面间数据共享，相比 Cookie 更">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day11前端面试题">
+<meta property="og:url" content="http://example.com/2023/03/02/Day11%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="前端有哪些实现跨页面通信的方法？前端有以下几种实现跨页面通信的方法：  Cookie：通过在页面间共享 Cookie 实现简单的跨页面通信，但是 Cookie 大小有限制，不能存储过多的数据。 localStorage 和 sessionStorage：HTML5 提供了本地存储的能力，可以通过 localStorage 或 sessionStorage 实现页面间数据共享，相比 Cookie 更">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-02T03:52:04.000Z">
+<meta property="article:modified_time" content="2023-03-19T07:53:54.000Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/02/Day11%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day11前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 15:53:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day11前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-02T03:52:04.000Z" title="Created 2023-03-02 11:52:04">2023-03-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-19T07:53:54.000Z" title="Updated 2023-03-19 15:53:54">2023-03-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day11前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前端有哪些实现跨页面通信的方法？"><a href="#前端有哪些实现跨页面通信的方法？" class="headerlink" title="前端有哪些实现跨页面通信的方法？"></a>前端有哪些实现跨页面通信的方法？</h1><p>前端有以下几种实现跨页面通信的方法：</p>
+<ol>
+<li>Cookie：通过在页面间共享 Cookie 实现简单的跨页面通信，但是 Cookie 大小有限制，不能存储过多的数据。</li>
+<li>localStorage 和 sessionStorage：HTML5 提供了本地存储的能力，可以通过 localStorage 或 sessionStorage 实现页面间数据共享，相比 Cookie 更加方便，但是也有大小限制。</li>
+<li>BroadcastChannel API：这是一个 HTML5 新增的 API，允许多个页面间通信，可以广播消息或向特定页面发送消息。</li>
+<li>SharedWorker：SharedWorker 是一种特殊类型的 Web Worker，可以在多个页面间共享数据，可以通过 postMessage API 实现消息传递。</li>
+<li>postMessage API：这是 HTML5 提供的一种消息传递机制，可以在不同窗口或 iframe 间传递消息，可以用来实现跨域通信。</li>
+<li>WebSocket：WebSocket 是一种持久化的协议，可以在浏览器和服务器之间实现双向通信，也可以在不同页面之间实现通信。</li>
+</ol>
+<h1 id="TypeScript-的内置数据类型有哪些？"><a href="#TypeScript-的内置数据类型有哪些？" class="headerlink" title="TypeScript 的内置数据类型有哪些？"></a>TypeScript 的内置数据类型有哪些？</h1><p>TypeScript 的内置数据类型包括：</p>
+<ol>
+<li>boolean：布尔类型，true 或 false。</li>
+<li>number：数值类型，包括整数和浮点数。</li>
+<li>string：字符串类型，表示文本。</li>
+<li>Array：数组类型，可以存储多个相同类型的值。</li>
+<li>Tuple：元组类型，可以存储多个不同类型的值，每个值的类型可以自定义。</li>
+<li>Enum：枚举类型，用于定义一些具有特定含义的常量。</li>
+<li>any：任意类型，表示不确定的数据类型。</li>
+<li>void：空类型，表示没有返回值。</li>
+<li>null 和 undefined：表示 null 和 undefined 值。</li>
+<li>never：表示永远不会返回的类型。</li>
+</ol>
+<h1 id="什么是虚拟-DOM？使用虚拟-DOM-一定更快吗？"><a href="#什么是虚拟-DOM？使用虚拟-DOM-一定更快吗？" class="headerlink" title="什么是虚拟 DOM？使用虚拟 DOM 一定更快吗？"></a>什么是虚拟 DOM？使用虚拟 DOM 一定更快吗？</h1><p>虚拟 DOM（Virtual DOM）是一种将浏览器 DOM 抽象为 JavaScript 对象的技术，用于提高 DOM 操作的效率和性能。虚拟 DOM 可以在渲染前对组件的变化进行计算，减少 DOM 操作的次数，从而提高渲染性能。</p>
+<p>使用虚拟 DOM 可以提高性能，但并不是一定更快。虚拟 DOM 需要进行额外的计算和比较操作，而这些操作也会消耗一定的时间和性能。因此，虚拟 DOM 适用于大规模、高度动态的页面，而在简单的静态页面中使用虚拟 DOM 并不能提高性能。此外，虚拟 DOM 还可以提高开发效率，使代码更易于维护和调试。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/02/Day11%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/03/02/Day11%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/03/Day12%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day12前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Day12前端面试题</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/01/Day10%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day10前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day10前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%9C%89%E5%93%AA%E4%BA%9B%E5%AE%9E%E7%8E%B0%E8%B7%A8%E9%A1%B5%E9%9D%A2%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">前端有哪些实现跨页面通信的方法？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript-%E7%9A%84%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">TypeScript 的内置数据类型有哪些？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F-DOM%EF%BC%9F%E4%BD%BF%E7%94%A8%E8%99%9A%E6%8B%9F-DOM-%E4%B8%80%E5%AE%9A%E6%9B%B4%E5%BF%AB%E5%90%97%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">什么是虚拟 DOM？使用虚拟 DOM 一定更快吗？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题">Day30前端面试题</a><time datetime="2023-03-30T12:56:18.000Z" title="Created 2023-03-30 20:56:18">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day29前端面试题">Day29前端面试题</a><time datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题">Day28前端面试题</a><time datetime="2023-03-19T02:03:15.000Z" title="Created 2023-03-19 10:03:15">2023-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day27%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day27前端面试题">Day27前端面试题</a><time datetime="2023-03-18T04:00:42.000Z" title="Created 2023-03-18 12:00:42">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day26%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day26前端面试题">Day26前端面试题</a><time datetime="2023-03-18T03:56:56.000Z" title="Created 2023-03-18 11:56:56">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

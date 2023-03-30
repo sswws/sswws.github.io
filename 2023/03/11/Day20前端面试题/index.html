@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day20前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JS 代码中的 use strict 是什么？有什么作用？“use strict” 是 ECMAScript 5 引入的一种严格模式，它用于指示 JavaScript 引擎采用更严格的解析和执行模式。 当在 JavaScript 代码中使用 “use strict” 声明时，代码将会在严格模式下执行。严格模式包含了一些额外的规则和限制，有助于开发者避免一些常见的错误。 使用 “use strict">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day20前端面试题">
+<meta property="og:url" content="http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="JS 代码中的 use strict 是什么？有什么作用？“use strict” 是 ECMAScript 5 引入的一种严格模式，它用于指示 JavaScript 引擎采用更严格的解析和执行模式。 当在 JavaScript 代码中使用 “use strict” 声明时，代码将会在严格模式下执行。严格模式包含了一些额外的规则和限制，有助于开发者避免一些常见的错误。 使用 “use strict">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-11T08:24:47.000Z">
+<meta property="article:modified_time" content="2023-03-19T07:53:54.000Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day20前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 15:53:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day20前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-11T08:24:47.000Z" title="Created 2023-03-11 16:24:47">2023-03-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-19T07:53:54.000Z" title="Updated 2023-03-19 15:53:54">2023-03-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day20前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="JS-代码中的-use-strict-是什么？有什么作用？"><a href="#JS-代码中的-use-strict-是什么？有什么作用？" class="headerlink" title="JS 代码中的 use strict 是什么？有什么作用？"></a>JS 代码中的 use strict 是什么？有什么作用？</h1><p>“use strict” 是 ECMAScript 5 引入的一种严格模式，它用于指示 JavaScript 引擎采用更严格的解析和执行模式。</p>
+<p>当在 JavaScript 代码中使用 “use strict” 声明时，代码将会在严格模式下执行。严格模式包含了一些额外的规则和限制，有助于开发者避免一些常见的错误。</p>
+<p>使用 “use strict” 的主要作用包括：</p>
+<ol>
+<li>消除 JavaScript 中的一些不合理、不安全的语法，减少代码出错的可能性。</li>
+<li>防止使用未声明的变量、函数，强制开发者进行声明。</li>
+<li>强制函数中的 this 值只能在函数内部使用，避免在全局作用域中误用 this 值。</li>
+<li>禁止删除变量、函数等，避免意外删除重要的变量和函数。</li>
+<li>提高代码性能，因为 JavaScript 引擎可以更好地进行优化。</li>
+</ol>
+<p>使用 “use strict” 的方式有两种：</p>
+<ol>
+<li>在 JavaScript 文件开头使用 “use strict”。</li>
+<li>在函数体内第一条语句中使用 “use strict”。</li>
+</ol>
+<p>例如，在 JavaScript 文件开头使用 “use strict” 的方式如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在函数体内第一条语句中使用 “use strict” 的方式如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总之，”use strict” 是一种在 JavaScript 中使用严格模式的方法，它可以提高代码的可靠性和性能，避免一些常见的错误。</p>
+<h1 id="什么是前后端分离？它有什么优点和缺点？"><a href="#什么是前后端分离？它有什么优点和缺点？" class="headerlink" title="什么是前后端分离？它有什么优点和缺点？"></a>什么是前后端分离？它有什么优点和缺点？</h1><p>前后端分离是指将前端和后端分别进行独立开发和部署。使前端和后端分别由不同的开发团队负责，通过 API 接口进行数据交互。前端负责页面展示和用户交互，后端负责业务逻辑和数据存储，两者通过 API 进行通信。</p>
+<p>前后端分离的优点包括：</p>
+<ol>
+<li>分工明确：前端和后端分别由不同的开发团队负责，各司其职，有利于开发流程的管理和控制。</li>
+<li>前后端解耦：前后端分离可以使前端和后端解耦，前端只关注页面展示和用户交互，后端只关注业务逻辑和数据存储，有利于模块化开发和维护。</li>
+<li>更好的性能和用户体验：前后端分离可以使前端采用现代化的前端框架和技术，提高网站的性能和用户体验。</li>
+<li>更好的可扩展性：前后端分离可以使后端提供更丰富的 API，方便前端进行开发和维护，同时也使得后端更易于扩展和修改。</li>
+</ol>
+<p>前后端分离的缺点包括：</p>
+<ol>
+<li>开发难度增加：前后端分离需要前端和后端分别进行开发，需要更多的协调和沟通，开发难度增加。</li>
+<li>维护难度增加：前后端分离使得前端和后端的代码分离，需要分别进行维护，维护难度增加。</li>
+<li>安全问题：前后端分离可能会导致一些安全问题，例如跨站点脚本攻击（XSS）和跨站点请求伪造（CSRF），需要采取相应的安全措施来解决。<br>总之，前后端分离有其优点和缺点。前后端分离可以提高开发效率、网站性能和用户体验，但也可能会增加开发和维护的难度，需要采取相应的措施来解决。</li>
+</ol>
+<h1 id="前端性能优化指标有哪些？怎么进行性能检测？"><a href="#前端性能优化指标有哪些？怎么进行性能检测？" class="headerlink" title="前端性能优化指标有哪些？怎么进行性能检测？"></a>前端性能优化指标有哪些？怎么进行性能检测？</h1><p>前端性能优化主要是通过一系列技术手段和优化策略来提升网站或应用的性能，从而提高用户的体验。下面列举一些常见的前端性能优化的指标和性能检测的方法：</p>
+<ol>
+<li>加载速度：网站或应用的加载速度是用户体验的重要因素。可以使用工具（如 WebPagetest、PageSpeed Insights）来测试网站或应用的加载速度，并通过优化图片大小、减少 HTTP 请求、使用浏览器缓存等方式来提升加载速度。</li>
+<li>渲染速度：渲染速度是指页面加载完成后页面内容渲染的速度。可以使用 Chrome 开发者工具中的 Performance 面板来检测页面渲染速度，并通过减少 DOM 操作、使用 CSS3 动画、减少 JavaScript 的执行时间等方式来提升渲染速度。</li>
+<li>响应速度：响应速度是指网站或应用处理请求的速度。可以使用工具（如 Pingdom、GTmetrix）来测试响应速度，并通过优化服务器响应时间、压缩 JavaScript 和 CSS 文件等方式来提升响应速度。</li>
+<li>可访问性：可访问性是指网站或应用是否易于使用和访问。可以通过使用 HTML5、WAI-ARIA 标准、有意义的网页标题、有意义的链接等方式来提高可访问性。</li>
+<li>移动端性能：随着移动设备的普及，移动端性能越来越重要。可以使用工具（如 Google Mobile-Friendly Test）来测试移动端性能，并通过使用响应式设计、优化图片和视频大小、使用 viewport meta 标签等方式来提高移动端性能。</li>
+</ol>
+<p>总结：前端性能优化指标包括加载速度、渲染速度、响应速度、可访问性和移动端性能等方面。可以使用各种工具来检测这些指标，并采取相应的优化策略来提高网站或应用的性能。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/03/11/Day20%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/12/Day21%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day21前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Day21前端面试题</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/10/Day19%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day19前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day19前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84-use-strict-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">JS 代码中的 use strict 是什么？有什么作用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%EF%BC%9F%E5%AE%83%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">什么是前后端分离？它有什么优点和缺点？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8C%87%E6%A0%87%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E6%80%8E%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%80%A7%E8%83%BD%E6%A3%80%E6%B5%8B%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">前端性能优化指标有哪些？怎么进行性能检测？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题">Day30前端面试题</a><time datetime="2023-03-30T12:56:18.000Z" title="Created 2023-03-30 20:56:18">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day29前端面试题">Day29前端面试题</a><time datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题">Day28前端面试题</a><time datetime="2023-03-19T02:03:15.000Z" title="Created 2023-03-19 10:03:15">2023-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day27%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day27前端面试题">Day27前端面试题</a><time datetime="2023-03-18T04:00:42.000Z" title="Created 2023-03-18 12:00:42">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day26%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day26前端面试题">Day26前端面试题</a><time datetime="2023-03-18T03:56:56.000Z" title="Created 2023-03-18 11:56:56">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

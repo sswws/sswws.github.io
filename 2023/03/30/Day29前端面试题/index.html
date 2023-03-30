@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day29前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="怎么调试 Node.js 程序？调试 Node.js 程序有多种方法，以下是一些常见的调试技巧和工具： 使用 console.log()：在代码中添加 console.log() 语句，输出变量值、函数执行情况等，以便了解程序运行状态。这是最基本的调试手段，适用于简单的问题排查。 使用内置调试器：Node.js 提供了一个内置的命令行调试器。要使用它，只需在启动脚本时在命令行中添加 inspect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day29前端面试题">
+<meta property="og:url" content="http://example.com/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="怎么调试 Node.js 程序？调试 Node.js 程序有多种方法，以下是一些常见的调试技巧和工具： 使用 console.log()：在代码中添加 console.log() 语句，输出变量值、函数执行情况等，以便了解程序运行状态。这是最基本的调试手段，适用于简单的问题排查。 使用内置调试器：Node.js 提供了一个内置的命令行调试器。要使用它，只需在启动脚本时在命令行中添加 inspect">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-30T12:52:30.000Z">
+<meta property="article:modified_time" content="2023-03-30T12:55:51.537Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day29前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-30 20:55:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day29前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-30T12:55:51.537Z" title="Updated 2023-03-30 20:55:51">2023-03-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day29前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="怎么调试-Node-js-程序？"><a href="#怎么调试-Node-js-程序？" class="headerlink" title="怎么调试 Node.js 程序？"></a>怎么调试 Node.js 程序？</h1><p>调试 Node.js 程序有多种方法，以下是一些常见的调试技巧和工具：</p>
+<p>使用 console.log()：在代码中添加 console.log() 语句，输出变量值、函数执行情况等，以便了解程序运行状态。这是最基本的调试手段，适用于简单的问题排查。</p>
+<p>使用内置调试器：Node.js 提供了一个内置的命令行调试器。要使用它，只需在启动脚本时在命令行中添加 inspect 或 inspect-brk 标志，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node inspect app.<span class="property">js</span></span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --inspect-brk app.<span class="property">js</span></span><br></pre></td></tr></table></figure>
+
+<p>这将启动一个调试会话。你可以在代码中添加 debugger; 语句，作为断点。调试器将在遇到断点时暂停执行。</p>
+<p>使用 Chrome DevTools：你可以使用 Chrome DevTools 来调试 Node.js 程序。首先，使用 inspect 或 inspect-brk 标志启动 Node.js 应用，然后打开 Chrome 浏览器，输入 chrome:&#x2F;&#x2F;inspect，在 “Devices” 下找到你的 Node.js 应用，并点击 “inspect”。这将打开一个 DevTools 实例，你可以像调试浏览器中的 JavaScript 代码一样调试 Node.js 代码。</p>
+<p>使用 Visual Studio Code：Visual Studio Code 是一个流行的开源代码编辑器，内置了对 Node.js 的调试支持。要在 VSCode 中调试 Node.js 应用，需要创建一个名为 .vscode&#x2F;launch.json 的配置文件，配置调试参数。以下是一个简单的配置示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;node&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Launch Program&quot;</span>,</span><br><span class="line">            <span class="string">&quot;program&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;/app.js&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，按下 F5 或点击左侧 “Run and Debug” 选项卡上的 “Run” 按钮开始调试。你可以在代码中添加断点、查看变量值、使用控制台等。</p>
+<p>使用其他 IDE 和编辑器：许多其他 IDE 和代码编辑器也提供了 Node.js 调试支持，如 WebStorm、Atom 等。具体操作方法因工具而异，请参考相应工具的文档。</p>
+<p>选择合适的调试工具和方法可以帮助你更高效地找到和解决 Node.js 程序中的问题。</p>
+<h1 id="你用过哪些包管理工具？它们各有什么特点？"><a href="#你用过哪些包管理工具？它们各有什么特点？" class="headerlink" title="你用过哪些包管理工具？它们各有什么特点？"></a>你用过哪些包管理工具？它们各有什么特点？</h1><p>前端常见的包管理工具包括 npm、Yarn 和 PNPM，它们各有不同的特点：</p>
+<ol>
+<li>npm：npm 是 Node.js 自带的包管理工具，也是前端开发中最常用的包管理工具之一。它是一个基于命令行的工具，可以方便地安装、管理和升级依赖包。npm 拥有丰富的开源包，使用方便，但可能会出现包冲突等问题。</li>
+<li>Yarn：Yarn 是 Facebook 开源的包管理工具，它是为了解决 npm 在包安装速度和版本管理上的一些问题而开发的。Yarn 支持离线安装、并行下载等特性，可以提高包安装的速度和可靠性。与 npm 相比，Yarn 具有更好的性能和稳定性，但是可能会出现版本冲突的问题。</li>
+<li>PNPM：PNPM 是另一种基于命令行的包管理工具，它也可以用于安装和管理依赖包。与 npm 和 Yarn 不同的是，PNPM 支持重用已安装的包，减少了重复下载包的问题，从而提高了安装速度和减少了磁盘空间占用。PNPM 支持锁定版本、并行安装、缓存依赖等特性，但可能需要更多的学习成本。</li>
+</ol>
+<p>综上所述，npm、Yarn 和 PNPM 都是可靠的包管理工具，使用场景和需求不同可以选择不同的工具。一般来说，对于小型项目或初学者，使用 npm 即可；对于大型项目或需要更好的性能和可靠性的项目，可以考虑使用 Yarn 或 PNPM。</p>
+<h1 id="SPA（单页应用）首屏加载速度慢怎么解决？"><a href="#SPA（单页应用）首屏加载速度慢怎么解决？" class="headerlink" title="SPA（单页应用）首屏加载速度慢怎么解决？"></a>SPA（单页应用）首屏加载速度慢怎么解决？</h1><p>单页应用（SPA）由于其特点，在首屏加载时，可能会出现加载速度慢的问题。为了解决这个问题，可以采用以下策略和技巧：</p>
+<ol>
+<li>代码拆分（Code Splitting）：将大型 JavaScript 文件拆分成更小的文件，按需加载。这可以通过使用动态导入（import() 语法）和 Webpack 等打包工具实现。代码拆分可以确保仅加载当前页面所需的代码，从而减少首屏加载时间。</li>
+<li>懒加载（Lazy Loading）：只在需要时加载某些资源，如图片、视频和其他媒体内容。懒加载可以通过 JavaScript 代码实现，或使用新的 loading&#x3D;”lazy” 属性（适用于部分现代浏览器）。</li>
+<li>缓存策略：利用浏览器缓存来存储静态资源，如 CSS、JavaScript、图片等。可以通过设置 HTTP 缓存头来实现，如 Cache-Control、ETag 等。合理的缓存策略可以减少重复请求，提高首屏加载速度。</li>
+<li>优化 JavaScript、CSS 和 HTML：压缩、混淆和缩小 JavaScript 和 CSS 文件，移除不必要的空格、注释和代码。对 HTML 文件进行类似的处理。可以使用诸如 UglifyJS、Terser、CSSNano 等工具进行优化。</li>
+<li>使用 CDN（内容分发网络）：将静态资源部署到 CDN 上，可以使用户从最近的服务器获取资源，从而加速首屏加载速度。</li>
+<li>服务端渲染（SSR）或预渲染（Prerendering）：通过在服务器端渲染初始 HTML，加快首次渲染速度。预渲染可以在构建阶段生成静态 HTML 文件，从而避免客户端在首次加载时执行过多的 JavaScript 代码。</li>
+<li>优化网络请求：减少不必要的网络请求，合并多个请求（如使用 CSS Sprites 或 HTTP&#x2F;2 多路复用），以及优先加载关键资源。</li>
+<li>优先加载关键路径（Critical Path）：确保首屏渲染所需的关键 CSS 和 JavaScript 代码优先加载。可以将关键 CSS 内联到 HTML 中，以避免额外的请求。</li>
+<li>使用性能分析工具：利用诸如 Lighthouse、WebPageTest 和 Chrome DevTools 等工具分析应用性能，找出瓶颈并进行优化。</li>
+</ol>
+<p>通过采用以上策略，可以有效地提高 SPA 首屏加载速度，提升用户体验。这些方法需要针对具体的项目进行调整和实施，从而达到最佳效果。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Day30前端面试题</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day28前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95-Node-js-%E7%A8%8B%E5%BA%8F%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">怎么调试 Node.js 程序？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%A0%E7%94%A8%E8%BF%87%E5%93%AA%E4%BA%9B%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%9F%E5%AE%83%E4%BB%AC%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">你用过哪些包管理工具？它们各有什么特点？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SPA%EF%BC%88%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8%EF%BC%89%E9%A6%96%E5%B1%8F%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">SPA（单页应用）首屏加载速度慢怎么解决？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题">Day30前端面试题</a><time datetime="2023-03-30T12:56:18.000Z" title="Created 2023-03-30 20:56:18">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day29前端面试题">Day29前端面试题</a><time datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题">Day28前端面试题</a><time datetime="2023-03-19T02:03:15.000Z" title="Created 2023-03-19 10:03:15">2023-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day27%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day27前端面试题">Day27前端面试题</a><time datetime="2023-03-18T04:00:42.000Z" title="Created 2023-03-18 12:00:42">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day26%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day26前端面试题">Day26前端面试题</a><time datetime="2023-03-18T03:56:56.000Z" title="Created 2023-03-18 11:56:56">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

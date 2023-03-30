@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day4前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是 CSS 盒子模型？盒子模型是构成 Web 页面的基本元素，所有 HTML 元素都可看作是盒子，一个网页一般是由多个盒子模型组成的。一个盒子模型由四部分组成，由内向外依次是：  Content box：内容，用于显示文本或其他内容。大小可通过 width 和 height 属性设置。 Padding box：内边距，用于调整内容区域与边框之间的距离，会受到盒子背景颜色的影响。大小可通过 pa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day4前端面试题">
+<meta property="og:url" content="http://example.com/2023/02/27/Day4%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="什么是 CSS 盒子模型？盒子模型是构成 Web 页面的基本元素，所有 HTML 元素都可看作是盒子，一个网页一般是由多个盒子模型组成的。一个盒子模型由四部分组成，由内向外依次是：  Content box：内容，用于显示文本或其他内容。大小可通过 width 和 height 属性设置。 Padding box：内边距，用于调整内容区域与边框之间的距离，会受到盒子背景颜色的影响。大小可通过 pa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-02-27T14:12:38.000Z">
+<meta property="article:modified_time" content="2023-03-19T07:53:54.000Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/02/27/Day4%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day4前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 15:53:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day4前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-27T14:12:38.000Z" title="Created 2023-02-27 22:12:38">2023-02-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-19T07:53:54.000Z" title="Updated 2023-03-19 15:53:54">2023-03-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day4前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="什么是-CSS-盒子模型？"><a href="#什么是-CSS-盒子模型？" class="headerlink" title="什么是 CSS 盒子模型？"></a>什么是 CSS 盒子模型？</h1><p>盒子模型是构成 Web 页面的基本元素，所有 HTML 元素都可看作是盒子，一个网页一般是由多个盒子模型组成的。<br>一个盒子模型由四部分组成，由内向外依次是：</p>
+<ul>
+<li>Content box：内容，用于显示文本或其他内容。大小可通过 width 和 height 属性设置。</li>
+<li>Padding box：内边距，用于调整内容区域与边框之间的距离，会受到盒子背景颜色的影响。大小可通过 padding 及其相关属性设置。</li>
+<li>Border box：边框，包裹了内边距和内容区域，一般用于给盒子添加装饰。大小可通过 border 及其相关属性设置。</li>
+<li>Margin box：外边距，用于调整不同盒子之间的距离，不受盒子背景颜色的影响。大小可通过 margin 及其相关属性设置。</li>
+</ul>
+<p>盒子模型可以分为标准盒模型和替代（IE）盒模型，它们之间的区别如下：</p>
+<ul>
+<li>标准盒模型：盒子的 width 和 height 属性对应的是内容区域，也就是说，一个盒子的实际大小是由设置的 width 和 height（内容区域）、内边距以及边框共同决定的。</li>
+<li>替代（IE）盒模型：盒子的 width 和 height 属性对应的是包含边框在内的区域，也就是说，一个盒子的实际大小仅仅是由设置的 width 和 height（边框、内边距、内容区域）决定的。</li>
+<li>注意：尽管 Margin Box 会影响盒子在页面所占据的空间，但影响的是盒子的外部空间，与盒子的内部区域无关，因此它不计入盒子的实际大小。盒子的范围到边框为止，不会延伸到 Margin box。</li>
+</ul>
+<p>在 CSS 当中，可以通过设置元素的 box-sizing 属性来决定元素显示为哪种盒模型：</p>
+<ul>
+<li>content-box：默认值，当前元素会显示为标准盒模型。</li>
+<li>border-box：当前元素会显示为替代（IE）盒模型。</li>
+</ul>
+<p>CSS 盒子模型（CSS box model）指的是用于布局和设计网页的 CSS 样式规范。CSS 盒子模型将每个 HTML 元素表示为一个矩形的盒子，这个盒子包括内容（content）、内边距（padding）、边框（border）和外边距（margin）四个部分。</p>
+<p>具体来说，盒子模型中各个部分的含义如下：</p>
+<ul>
+<li>内容（<strong>content</strong>）：元素的实际内容，由 width 和 height 属性决定。</li>
+<li>内边距（<strong>padding</strong>）：内容和边框之间的空间，由 padding 属性决定。</li>
+<li>边框（<strong>border</strong>）：内容和外边距之间的边框，由 border 属性决定。</li>
+<li>外边距（<strong>margin</strong>）：盒子边缘和其它元素之间的空间，由 margin 属性决定。</li>
+</ul>
+<p>CSS 盒子模型中，盒子的总大小由这四个部分加起来决定，即 width + padding + border + margin。需要注意的是，CSS 盒子模型有两种，分别是标准盒子模型和怪异盒子模型。</p>
+<ul>
+<li>标准盒子模型中，盒子的大小 &#x3D; width + padding + border + margin</li>
+<li>怪异盒子模型中，盒子的大小 &#x3D; width + margin，因为 width 已经包含了 padding + border</li>
+</ul>
+<h1 id="ES5-中的类和-ES6-中的-class-有什么区别？"><a href="#ES5-中的类和-ES6-中的-class-有什么区别？" class="headerlink" title="ES5 中的类和 ES6 中的 class 有什么区别？"></a>ES5 中的类和 ES6 中的 class 有什么区别？</h1><p>在 ES5 中，我们通常使用构造函数来创建对象和实现继承，而在 ES6 中，引入了类（class）的概念来简化对象创建和继承的过程。下面是 ES5 中类和 ES6 中的 class 的一些区别：</p>
+<ul>
+<li>语法不同：ES5 中使用构造函数来定义类，而 ES6 中使用 class 关键字来定义类。</li>
+<li>继承方式不同：ES5 中使用原型链继承来实现继承，而 ES6 中使用 extends 关键字和 super 函数来实现继承。</li>
+<li>类方法的定义方式不同：ES5 中类方法定义在构造函数的原型对象上，而 ES6 中类方法定义在类的内部。</li>
+<li>类属性的定义方式不同：ES5 中类属性定义在构造函数的原型对象上，而 ES6 中类属性定义在类的内部，并且需要使用 static 关键字来定义静态属性。</li>
+<li>类的调用方式不同：ES5 中需要使用 new 关键字来创建类的实例，而 ES6 中类的调用方式更加简单，只需要像函数一样调用即可。</li>
+</ul>
+<h1 id="说说你对-TypeScript-的理解？与-JavaScript-的区别？"><a href="#说说你对-TypeScript-的理解？与-JavaScript-的区别？" class="headerlink" title="说说你对 TypeScript 的理解？与 JavaScript 的区别？"></a>说说你对 TypeScript 的理解？与 JavaScript 的区别？</h1><p>TypeScript 是一种开源的编程语言，它是 JavaScript 的一个超集，支持静态类型、类、接口等特性，并且在编译时进行类型检查。TypeScript 的设计目标是提高代码的可维护性和可读性，并且可以在大型项目中提供更好的代码组织和重用。</p>
+<p>相比于 JavaScript，TypeScript 具有以下特点：</p>
+<ul>
+<li>支持类型：TypeScript 支持静态类型，在编译时进行类型检查，能够在代码编写阶段发现类型错误，减少运行时错误。</li>
+<li>支持面向对象编程：TypeScript 支持类、接口、泛型等面向对象编程特性，可以更好地组织代码和重用代码。</li>
+<li>支持 ES6+特性：TypeScript 支持 ES6+的语法和特性，可以使用最新的语言特性来提高代码质量和可读性。</li>
+<li>更好的编辑器支持：TypeScript 提供了更好的编辑器支持，包括类型检查、代码补全、重构等功能，可以提高开发效率。</li>
+<li>更好的可维护性：TypeScript 的类型系统和面向对象特性可以提高代码的可维护性和可读性，使得代码更加易于维护和扩展。</li>
+</ul>
+<p>总之，TypeScript 可以看作是 JavaScript 的一个超集，它扩展了 JavaScript 的功能，提供了更好的类型检查和面向对象编程特性，可以提高代码的可维护性和可读性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/02/27/Day4%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/02/27/Day4%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/27/Day5%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day5前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Day5前端面试题</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/27/Day3%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day3前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day3前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-CSS-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是 CSS 盒子模型？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES5-%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C-ES6-%E4%B8%AD%E7%9A%84-class-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">ES5 中的类和 ES6 中的 class 有什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9-TypeScript-%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F%E4%B8%8E-JavaScript-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">说说你对 TypeScript 的理解？与 JavaScript 的区别？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题">Day30前端面试题</a><time datetime="2023-03-30T12:56:18.000Z" title="Created 2023-03-30 20:56:18">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day29前端面试题">Day29前端面试题</a><time datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题">Day28前端面试题</a><time datetime="2023-03-19T02:03:15.000Z" title="Created 2023-03-19 10:03:15">2023-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day27%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day27前端面试题">Day27前端面试题</a><time datetime="2023-03-18T04:00:42.000Z" title="Created 2023-03-18 12:00:42">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day26%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day26前端面试题">Day26前端面试题</a><time datetime="2023-03-18T03:56:56.000Z" title="Created 2023-03-18 11:56:56">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

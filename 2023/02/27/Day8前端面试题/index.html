@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Day8前端面试题 | 韩昊洋博客</title><meta name="author" content="韩昊洋"><meta name="copyright" content="韩昊洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JS 中数组是如何在内存中存储的？在 JavaScript 中，数组是一种特殊的对象，可以用于存储一组有序的数据。数组在内存中的存储方式与其他对象类似，都是存储在堆中。 JavaScript 中的数组是一种动态数组，可以自动扩展和收缩。当一个数组需要扩展时，JavaScript 引擎会为其分配更多的内存空间，同时将原有数据拷贝到新的内存空间中。当一个数组需要收缩时，JavaScript 引擎会将其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day8前端面试题">
+<meta property="og:url" content="http://example.com/2023/02/27/Day8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="韩昊洋博客">
+<meta property="og:description" content="JS 中数组是如何在内存中存储的？在 JavaScript 中，数组是一种特殊的对象，可以用于存储一组有序的数据。数组在内存中的存储方式与其他对象类似，都是存储在堆中。 JavaScript 中的数组是一种动态数组，可以自动扩展和收缩。当一个数组需要扩展时，JavaScript 引擎会为其分配更多的内存空间，同时将原有数据拷贝到新的内存空间中。当一个数组需要收缩时，JavaScript 引擎会将其">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-02-27T14:49:22.000Z">
+<meta property="article:modified_time" content="2023-03-19T07:53:54.000Z">
+<meta property="article:author" content="韩昊洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/02/27/Day8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Day8前端面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 15:53:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="韩昊洋博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="韩昊洋博客"><span class="site-name">韩昊洋博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Day8前端面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-27T14:49:22.000Z" title="Created 2023-02-27 22:49:22">2023-02-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-19T07:53:54.000Z" title="Updated 2023-03-19 15:53:54">2023-03-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Day8前端面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="JS-中数组是如何在内存中存储的？"><a href="#JS-中数组是如何在内存中存储的？" class="headerlink" title="JS 中数组是如何在内存中存储的？"></a>JS 中数组是如何在内存中存储的？</h1><p>在 JavaScript 中，数组是一种特殊的对象，可以用于存储一组有序的数据。数组在内存中的存储方式与其他对象类似，都是存储在堆中。</p>
+<p>JavaScript 中的数组是一种动态数组，可以自动扩展和收缩。当一个数组需要扩展时，JavaScript 引擎会为其分配更多的内存空间，同时将原有数据拷贝到新的内存空间中。当一个数组需要收缩时，JavaScript 引擎会将其内存空间释放掉。</p>
+<p>在 JavaScript 中，数组的每个元素是通过其索引来访问的。索引是一个整数，用于指定数组中的一个元素。JavaScript 中的数组索引是以 0 开始的，也就是说，第一个元素的索引为 0，第二个元素的索引为 1，以此类推。</p>
+<p>由于 JavaScript 中的数组是动态数组，所以它的索引可以随时改变。因此，当你访问一个数组时，需要确保你正在访问的索引是有效的，否则会导致数组越界的错误。</p>
+<h1 id="JS-中-Map-和-WeakMap-有什么区别？"><a href="#JS-中-Map-和-WeakMap-有什么区别？" class="headerlink" title="JS 中 Map 和 WeakMap 有什么区别？"></a>JS 中 Map 和 WeakMap 有什么区别？</h1><p>在 JavaScript 中，Map 和 WeakMap 都是键值对的集合，但它们有几个重要的区别：</p>
+<ol>
+<li>键类型：Map 对象的键可以是任何类型，包括基本数据类型和对象类型，而 WeakMap 对象的键必须是对象类型。</li>
+<li>垃圾回收：Map 对象中的键和值都会被常规垃圾回收机制回收，而 WeakMap 中的键是弱引用，即在对象被垃圾回收时，WeakMap 中对应的键值对也会被自动删除。这使得 WeakMap 通常用于缓存或元数据，当对象不再被使用时，WeakMap 可以自动清除对应的数据，避免内存泄漏。</li>
+<li>迭代器：Map 对象有内置的迭代器，可以通过 for…of 循环来遍历键值对，而 WeakMap 没有内置的迭代器，因此不能直接遍历键值对。</li>
+</ol>
+<p>综上所述，Map 和 WeakMap 在功能上有所重叠，但应用场景不同。Map 可以存储任何类型的键值对，适用于大部分情况；WeakMap 适用于需要自动清除的缓存和元数据场景。</p>
+<h1 id="Vue-模板是如何编译的？经历了哪些过程？"><a href="#Vue-模板是如何编译的？经历了哪些过程？" class="headerlink" title="Vue 模板是如何编译的？经历了哪些过程？"></a>Vue 模板是如何编译的？经历了哪些过程？</h1><p>Vue 模板在运行时会被编译成渲染函数，最终生成 Virtual DOM，进行页面渲染。</p>
+<p>Vue 模板编译的过程主要分为以下三个步骤：</p>
+<ol>
+<li>解析模板：Vue 会使用正则表达式解析模板字符串，解析出其中的指令、标签、属性等内容。生成</li>
+<li>AST（抽象语法树）：将解析后的模板字符串转化为抽象语法树，抽象语法树是一个以 JavaScript 对象表示的树形结构，它将模板中的各个节点和属性用 JavaScript 对象的形式表示出来，方便后续对模板进行分析和处理。</li>
+<li>生成渲染函数：将 AST 转化为渲染函数，渲染函数是一个纯 JavaScript 函数，用于将模板转化为 Virtual DOM。</li>
+</ol>
+<p>在模板的编译过程中，还会涉及到动态指令、插槽、组件等特殊情况的处理，不同的编译器实现可能存在一些差异，但大体的编译流程是相似的。</p>
+<p>通过模板的编译，我们可以将模板转化为可被 JavaScript 运行的函数，从而更高效地渲染页面，提高应用的性能。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">韩昊洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/02/27/Day8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2023/02/27/Day8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/28/Day9%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day9前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Day9前端面试题</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/27/Day7%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day7前端面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Day7前端面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">韩昊洋</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-%E4%B8%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%A6%82%E4%BD%95%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E7%9A%84%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">JS 中数组是如何在内存中存储的？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-%E4%B8%AD-Map-%E5%92%8C-WeakMap-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">JS 中 Map 和 WeakMap 有什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-%E6%A8%A1%E6%9D%BF%E6%98%AF%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E7%9A%84%EF%BC%9F%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Vue 模板是如何编译的？经历了哪些过程？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day30%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day30前端面试题">Day30前端面试题</a><time datetime="2023-03-30T12:56:18.000Z" title="Created 2023-03-30 20:56:18">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/30/Day29%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day29前端面试题">Day29前端面试题</a><time datetime="2023-03-30T12:52:30.000Z" title="Created 2023-03-30 20:52:30">2023-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/19/Day28%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day28前端面试题">Day28前端面试题</a><time datetime="2023-03-19T02:03:15.000Z" title="Created 2023-03-19 10:03:15">2023-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day27%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day27前端面试题">Day27前端面试题</a><time datetime="2023-03-18T04:00:42.000Z" title="Created 2023-03-18 12:00:42">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/Day26%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Day26前端面试题">Day26前端面试题</a><time datetime="2023-03-18T03:56:56.000Z" title="Created 2023-03-18 11:56:56">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 韩昊洋</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
